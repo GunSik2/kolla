@@ -5,9 +5,9 @@
 - wired 1 network interface (enp0s25)
 
 ## BRIDGE
-- Diagram
 ![Architecture](https://user-images.githubusercontent.com/11453229/78886356-03c44200-7a99-11ea-8820-01dbce8cc4db.png)
 
+- cd /etc/sysconfig/network-scripts/
 - ifcfg-enp0s25 (original)
 ```
 DEVICE=enp0s25
