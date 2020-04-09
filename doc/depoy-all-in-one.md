@@ -8,6 +8,7 @@
 - ifcfg-enp0s25 (original)
 ```
 DEVICE=enp0s25
+NAME=enp0s25
 TYPE=Ethernet
 BOOTPROTO=dhcp
 DEFROUTE=yes
@@ -28,8 +29,8 @@ BOOTPROTO=none
 ONBOOT=yes
 VLAN=yes
 IPADDR=10.0.5.201
+GATEWAY=10.0.5.1
 PREFIX=24
-DEFROUTE=yes
 ```
 - ifcfg-enp0s25.101 : unnumbered for api 
 ```
