@@ -64,6 +64,7 @@ pip install ansible
 kolla_base_distro: "centos"
 kolla_install_type: "binary"
 openstack_release: "train"
+nova_compute_virt_type: "kvm"
 kolla_internal_vip_address: "10.0.5.202" 
 network_interface: "enp0s25.10"
 neutron_external_interface: "enp0s25.101"
