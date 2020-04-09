@@ -54,7 +54,14 @@ source kolla-env/bin/activate
 pip install -U pip
 pip install ansible
 ```
+- Configure
+- Deployment
+```
+kolla-ansible -i ./all-in-one bootstrap-servers
+kolla-ansible -i ./all-in-one prechecks
+kolla-ansible -i ./all-in-one deploy
 
+```
 
 ## Test
 
