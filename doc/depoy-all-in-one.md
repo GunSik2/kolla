@@ -58,6 +58,9 @@ pip install -U pip
 pip install ansible
 ```
 - Configure
+```
+
+```
 - Deployment
 ```
 kolla-ansible -i ./all-in-one bootstrap-servers
