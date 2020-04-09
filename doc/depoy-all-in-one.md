@@ -2,7 +2,43 @@
 ## Env
 - EliteBook Intel i7, 16G Mem, 256G Disk
 - CentOS 7.7
-- wireless 1 network interface (wlo1)
+- wired 1 network interface (enp0s25)
+
+## BRIDGE
+- ifcfg-enp0s25 (original)
+```
+DEVICE=enp0s25
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+ONBOOT=no
+```
+- ifcfg-enp0s25 
+```
+DEVICE=enp0s25
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+```
+- ifcfg-enp0s25.10 : public for access
+```
+DEVICE=enp0s25.10
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+VLAN=yes
+IPADDR=10.0.5.201
+PREFIX=24
+DEFROUTE=yes
+```
+- ifcfg-enp0s25.101 : unnumbered for api 
+```
+DEVICE=enp0s25.101
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+VLAN=yes
+```
 
 ## Installation
 - Install Python build dependencies
