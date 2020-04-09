@@ -68,3 +68,4 @@ kolla-ansible -i ./all-in-one deploy
 ## Reference
 - https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html
 - https://github.com/openstack/kolla-ansible/releases
+- https://www.linuxtechi.com/vlan-tagged-nic-ethernet-card-centos-rhel-servers/
