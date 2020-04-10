@@ -88,6 +88,12 @@ neutron_external_interface: "enp0s25.101"
 ```
 (kolla-env) kolla-env/share/kolla-ansible/init-runonce 
 ```
+- Access Horizon: http://10.0.5.202
+```
+(kolla-env) cat /etc/kolla/passwords.yml  | grep keystone_admin
+keystone_admin_password: N6H8BpaDxOs9CBsiJeweKLM599R7zz2hrPUNdRZL
+```
+
 ## Reference
 - https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html
 - https://github.com/openstack/kolla-ansible/releases
