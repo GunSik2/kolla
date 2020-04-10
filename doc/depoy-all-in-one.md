@@ -86,7 +86,7 @@ neutron_external_interface: "enp0s25.101"
 ```
 - Create sample image and network
 ```
-(kolla-env) /usr/share/kolla-ansible/init-runonce
+(kolla-env) kolla-env/share/kolla-ansible/init-runonce 
 ```
 ## Reference
 - https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html
