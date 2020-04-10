@@ -54,8 +54,8 @@ sudo yum install python-devel libffi-devel gcc openssl-devel libselinux-python
 sudo yum install python-virtualenv
 virtualenv kolla-env
 source kolla-env/bin/activate
-pip install -U pip
-pip install ansible
+(kolla-env) pip install -U pip
+(kolla-env) pip install ansible
 ```
 - Configure
 ```
@@ -71,14 +71,23 @@ neutron_external_interface: "enp0s25.101"
 ```
 - Deployment
 ```
-kolla-ansible -i ./all-in-one bootstrap-servers
-kolla-ansible -i ./all-in-one prechecks
-kolla-ansible -i ./all-in-one deploy
+(kolla-env) kolla-ansible -i ./all-in-one bootstrap-servers
+(kolla-env) kolla-ansible -i ./all-in-one prechecks
+(kolla-env) kolla-ansible -i ./all-in-one deploy
 
 ```
 
 ## Test
-
+- Install openstack cli & create credentials
+```
+(kolla-env) pip install python-openstackclient
+(kolla-env) kolla-ansible post-deploy
+(kolla-env) . /etc/kolla/admin-openrc.sh
+```
+- Create sample image and network
+```
+(kolla-env) /usr/share/kolla-ansible/init-runonce
+```
 ## Reference
 - https://docs.openstack.org/kolla-ansible/latest/user/quickstart.html
 - https://github.com/openstack/kolla-ansible/releases
