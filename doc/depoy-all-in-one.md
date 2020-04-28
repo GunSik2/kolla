@@ -49,6 +49,18 @@ VLAN=yes
 ```
 sudo yum install python-devel libffi-devel gcc openssl-devel libselinux-python
 ```
+- Install kolla-ansible
+```
+git clone https://opendev.org/openstack/kolla-cli -b stable/train
+git clone https://opendev.org/openstack/kolla-ansible -b stable/train
+git clone https://opendev.org/openstack/kolla -b stable/train
+
+sudo mkdir -p /etc/kolla
+chown kolla:kolla /etc/kolla
+cp -r kolla-ansible/etc/kolla/* /etc/kolla
+mkdir -p /etc/kolla/inventory
+cp kolla-ansible/ansible/inventory/* /etc/kolla/inventory/
+```
 - Install dependencies using a virtual environment
 ```
 sudo yum install python-virtualenv
@@ -56,6 +68,7 @@ virtualenv kolla-env
 source kolla-env/bin/activate
 (kolla-env) pip install -U pip
 (kolla-env) pip install ansible
+(kolla-env) kolla-genwd
 ```
 - Configure
 ```
@@ -72,10 +85,9 @@ neutron_external_interface: "enp0s25.101"
 - Deployment
 ```
 (kolla-env) cd kolla-ansible/ansible/inventory/
-(kolla-env) kolla-ansible -i ./all-in-one bootstrap-servers
-(kolla-env) kolla-ansible -i ./all-in-one prechecks
-(kolla-env) kolla-ansible -i ./all-in-one deploy
-
+(kolla-env) kolla-ansible -i /etc/kolla/inventory/all-in-one bootstrap-servers
+(kolla-env) kolla-ansible -i /etc/kolla/inventory/all-in-one prechecks
+(kolla-env) kolla-ansible -i /etc/kolla/inventory/all-in-one deploy
 ```
 
 ## Test
