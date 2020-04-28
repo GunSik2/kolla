@@ -71,6 +71,7 @@ neutron_external_interface: "enp0s25.101"
 ```
 - Deployment
 ```
+(kolla-env) cd kolla-ansible/ansible/inventory/
 (kolla-env) kolla-ansible -i ./all-in-one bootstrap-servers
 (kolla-env) kolla-ansible -i ./all-in-one prechecks
 (kolla-env) kolla-ansible -i ./all-in-one deploy
